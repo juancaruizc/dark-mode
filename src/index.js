@@ -7,9 +7,11 @@ import Navbar from "./components/Navbar";
 
 import "./styles.scss";
 
+import {useDarkMode} from './hooks/useDarkMode'
+
 const App = () => {
   const [coinData, setCoinData] = useState([]);
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useDarkMode(false);
 
   useEffect(() => {
     axios
@@ -29,4 +31,3 @@ const App = () => {
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(<App />, rootElement);
-//test
